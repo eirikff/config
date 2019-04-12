@@ -121,5 +121,4 @@ fi
 export VISUAL=vim
 export EDITOR=$VISUAL
 export PS1=$(cat ~/.ps1)
-
-
+export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/\~}\007"'
