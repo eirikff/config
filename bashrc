@@ -118,7 +118,11 @@ fi
 
 
 # My own configs
+alias ls='ls -CF --color=auto'
+LS_COLORS='ow=01;36;40'  # removes green box around some files in WSL
+export LS_COLORS
 export VISUAL=vim
 export EDITOR=$VISUAL
-export PS1=$(cat ~/.config/ps1)
 export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/\~}\007"'
+source ~/.config/ps1
+
