@@ -14,6 +14,7 @@ then
     mkdir -p "$CONFIG_PATH"
 fi
 cp ps1 $CONFIG_PATH/ps1
+cp ps1-ip $CONFIG_PATH/ps1-ip
 
 # Copy bashrc
 if [ -f "$HOME/.bashrc" ]
