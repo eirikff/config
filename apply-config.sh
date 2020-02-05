@@ -43,5 +43,6 @@ fi
 cp -r ./local/* $HOME/.local
 
 
-# Apply git log
-./git-log
+# Apply git aliases
+chmod +x git-aliases
+./git-aliases
