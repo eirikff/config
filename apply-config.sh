@@ -52,7 +52,7 @@ LOCAL_BIN_PATH="$HOME/.local/bin"
 echo "Creating $LOCAL_SRC_PATH"
 mkdir -p "$LOCAL_SRC_PATH"
 
-echo "Creating $LOCAL_BIN_APTH"
+echo "Creating $LOCAL_BIN_PATH"
 mkdir -p "$LOCAL_BIN_PATH"
 
 cp -r ./local/* $HOME/.local
