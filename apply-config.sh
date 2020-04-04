@@ -46,8 +46,8 @@ echo "source $CONFIG_PATH/.$ps1_choice" >> $HOME/.bashrc
 
 
 # Create necessary paths for custom programs
-LOCAL_SRC_PATH="$CONFIG_PATH/src"
-LOCAL_BIN_PATH="$CONFIG_PATH/bin"
+LOCAL_SRC_PATH="$HOME/.local/src"
+LOCAL_BIN_PATH="$HOME/.local/bin"
 
 echo "Creating $LOCAL_SRC_PATH"
 mkdir -p "$LOCAL_SRC_PATH"
