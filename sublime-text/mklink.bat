@@ -1,2 +1,0 @@
-mklink "C:\Users\%USERNAME%\AppData\Roaming\Sublime Text 3\Packages\User\Preferences.sublime-settings" "%cd%\Preferences.sublime-settings"
-mklink "C:\Users\%USERNAME%\AppData\Roaming\Sublime Text 3\Packages\User\8-Colour-Dark.tmTheme" "%cd%\8-Colour-Dark.tmTheme"
