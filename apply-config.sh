@@ -42,7 +42,7 @@ if [[ "$ps1_choice" == "ip" ]]; then
 else
     ps1_choice=ps1
 fi
-echo "source $CONFIG_PATH/.$ps1_choice" >> $HOME/.bashrc
+echo "source $CONFIG_PATH/$ps1_choice" >> $HOME/.bashrc
 
 
 # Create necessary paths for custom programs
