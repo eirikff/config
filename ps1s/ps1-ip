@@ -1,0 +1,13 @@
+# For a list of possible colors, run colortest-16b
+# (if not installed, run apt install colortest)
+
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+parse_ip_addr() {
+    ip route get 1.2.3.4 | grep -oP '(?<=src )\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b'
+}
+
+# you need to wrap the colors in \[ and \] to make bash count the number of characters correctly
+prompt="\[\e[1;33m\]\t\[\e[0;37m\]/\[\e[1;36m\]\u\[\e[0;37m\]@\[\e[1;34m\]$(parse_ip_addr)\[\e[0;37m\]:\[\e[1;33m\]\W\[\e[0;33m\]\$(parse_git_branch)\[\e[0;37m\]$\[\e[0m\]"
+export PS1="${prompt} "

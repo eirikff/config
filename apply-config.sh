@@ -34,16 +34,37 @@ echo "Creating $CONFIG_PATH"
 mkdir -p "$CONFIG_PATH"
 
 # Copy ps1
-cp ps1 $CONFIG_PATH/ps1
-cp ps1-ip $CONFIG_PATH/ps1-ip
-read -p "Use [s]tandard ps1 or [ip] ps1? " ps1_choice
-if [[ "$ps1_choice" == "ip" ]]; then 
-    ps1_choice=ps1-ip
-else
-    ps1_choice=ps1
+PS1_PATH="$CONFIG_PATH/ps1s"
+mkdir -p "$PS1_PATH"
+cp ps1s/* $PS1_PATH/
+echo "Which PS1 to use? (enter blank for default)"
+#\n* default\n* short\n* ip\n* root\n> "
+for f in $(/usr/bin/env ls -1 ./ps1s/ps1-*); do
+    echo -n "* "
+    echo $f | sed -e 's/^.*ps1\-//'
+done
+read -p "> " ps1_choice
+case "$ps1_choice" in
+    "short")
+        ps1_choice=ps1-short
+        ;;
+    "ip")
+        ps1_choice=ps1-ip
+        ;;
+    "root")
+        ps1_choice=ps1-root
+        ;;
+    *)
+        ps1_choice=ps1-default
+        ;;
+esac
+echo "Creating PS1 symlink"
+ln -sf "$PS1_PATH/$ps1_choice" "$CONFIG_PATH/ps1"
+grep -q -E 'source .+/ps1' $HOME/.bashrc
+if [[ $? -ne 0 ]]; then
+    echo "Adding ps1 line to bashrc"
+    echo "source $CONFIG_PATH/ps1" >> $HOME/.bashrc
 fi
-echo "source $CONFIG_PATH/$ps1_choice" >> $HOME/.bashrc
-
 
 # Create necessary paths for custom programs
 LOCAL_SRC_PATH="$HOME/.local/src"
