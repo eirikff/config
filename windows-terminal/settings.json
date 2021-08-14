@@ -106,6 +106,12 @@
                 "direction": "up"
             },
             "keys": "alt+shift+k"
+        },
+        {
+            "command": {
+                "action": "openTabRenamer"
+            },
+            "keys": "ctrl+alt+w"
         }
     ],
     "copyFormatting": "none",
