@@ -41,7 +41,7 @@
                 "split": "vertical",
                 "splitMode": "duplicate"
             },
-            "keys": "ctrl+shift+o"
+            "keys": "ctrl+shift+e"
         },
         {
             "command": {
@@ -49,7 +49,7 @@
                 "split": "horizontal",
                 "splitMode": "duplicate"
             },
-            "keys": "ctrl+shift+e"
+            "keys": "ctrl+shift+o"
         },
         {
             "command": {
