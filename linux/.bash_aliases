@@ -5,7 +5,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # open current folder in file explorer
-if [ -z ${WSL_DISTRO_NAME} ]; then
+if [[ ! -z ${WSL_DISTRO_NAME} ]]; then
     alias expl="explorer.exe ."
 else
     alias expl="xdg-open ."
