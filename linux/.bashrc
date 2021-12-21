@@ -121,9 +121,16 @@ fi
 export VISUAL=vim
 export EDITOR=$VISUAL
 
-# removes green box around some files in WSL
-LS_COLORS='ow=01;36;40'
-export LS_COLORS
+if [[ ! -z ${WSL_DISTRO_NAME} ]]; then
+    # removes green box around some files in WSL
+    LS_COLORS='ow=01;36;40'
+    export LS_COLORS
+
+    # enable gui in WSL2
+    # source: https://medium.com/@japheth.yates/the-complete-wsl2-gui-setup-2582828f4577
+    export DISPLAY="$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0"
+    export LIBGL_ALWAYS_INDIRECT=1
+fi
 
 # add .local/bin to path
 export PATH=${PATH}:${HOME}/.local/bin
