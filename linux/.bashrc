@@ -96,15 +96,6 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -117,12 +108,23 @@ if ! shopt -oq posix; then
 fi
 
 
-# My own configs
-alias ls='ls -CF --color=auto'
-LS_COLORS='ow=01;36;40'  # removes green box around some files in WSL
-export LS_COLORS
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# Set vim as preferred editor
 export VISUAL=vim
 export EDITOR=$VISUAL
-export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/\~}\007"'
-source ~/.config/ps1
+
+# removes green box around some files in WSL
+LS_COLORS='ow=01;36;40'
+export LS_COLORS
+
+# add .local/bin to path
+export PATH=${PATH}:${HOME}/.local/bin
 
