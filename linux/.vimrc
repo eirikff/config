@@ -55,3 +55,9 @@ set laststatus=2
 " Format status line
 set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
+" Syntax highlighting of ROS launch files
+" Ref: https://stackoverflow.com/a/28117335/3723378
+au BufRead,BufNewFile *.launch set filetype=xml
+
+" Remaps pressing j and k in quick succession to be the same as escape
+imap jk <ESC>
