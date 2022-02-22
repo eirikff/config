@@ -129,9 +129,12 @@ if [[ ! -z ${WSL_DISTRO_NAME} ]]; then
     # enable gui in WSL2
     # source: https://medium.com/@japheth.yates/the-complete-wsl2-gui-setup-2582828f4577
     export DISPLAY="$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0"
-    export LIBGL_ALWAYS_INDIRECT=1
+    # don't use LIBGL_ALWAYS_INDIRECT because Rviz doesn't work well if we use it.
+    #export LIBGL_ALWAYS_INDIRECT=1
 fi
 
 # add .local/bin to path
 export PATH=${PATH}:${HOME}/.local/bin
+
+source /opt/ros/noetic/setup.bash
 
