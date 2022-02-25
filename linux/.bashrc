@@ -138,3 +138,7 @@ export PATH=${PATH}:${HOME}/.local/bin
 
 source /opt/ros/noetic/setup.bash
 
+# Needed for screen for some reason
+# see: https://superuser.com/questions/1195962/cannot-make-directory-var-run-screen-permission-denied
+export SCREENDIR="$HOME/.screen"
+
