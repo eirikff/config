@@ -15,6 +15,6 @@ cp ./.vimrc $HOME/.vimrc
 cp ./.tmux.conf $HOME/.tmux.conf
 
 echo "Copying .config folder"
-cp -ir ./.config $HOME/.config
-cp -ir "./.local" "$HOME/.local"
+cp -ir ./.config $HOME
+cp -ir ./.local $HOME
 
