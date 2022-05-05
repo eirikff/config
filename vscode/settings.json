@@ -40,6 +40,8 @@
     "vim.handleKeys": {
         "<C-t>": false,
         "<C-w>": false
-    }
+    },
+    // to be able to move past code folds using j/k without the fold opening
+    "vim.foldfix": true
 }
 
