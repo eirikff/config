@@ -5,9 +5,11 @@ set shiftwidth=4
 set autoindent
 set smartindent
 
-" Relative line numbers
+" Line numbers
 set nu
-set relativenumber
+
+" Relative line numbers
+" set rnu
 
 " Set 7 lines to the cursor when scrolling with j/k
 set so=7
