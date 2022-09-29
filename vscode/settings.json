@@ -10,6 +10,10 @@
         "editor.wordWrap": "on",
         "editor.quickSuggestions": false
     }, 
+    "python.formatting.provider": "autopep8",
+    "python.formatting.autopep8Args": [
+        "--max-line-length=100"
+    ],
     /// Editor
     "zenMode.hideLineNumbers": false,
     "editor.bracketPairColorization.enabled": true,
