@@ -12,7 +12,7 @@ set nu
 " set rnu
 
 " Set 7 lines to the cursor when scrolling with j/k
-set so=7
+" set so=7
 
 " Turn on the Wild menu (tab auto-complete in command interface)
 set wildmenu
