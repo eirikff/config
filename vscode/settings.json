@@ -43,7 +43,8 @@
     // disable some keys being handled by vim and be handled by vscode directly instead
     "vim.handleKeys": {
         "<C-t>": false,
-        "<C-w>": false
+        "<C-w>": false,
+        "<C-n>": false
     },
     // to be able to move past code folds using j/k without the fold opening
     "vim.foldfix": true
