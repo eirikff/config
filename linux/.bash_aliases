@@ -2,7 +2,14 @@
 alias ls='ls -CF --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
-alias l='ls -CF'
+
+# grep
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# less interpret ANSI
+alias less='less -R'
 
 # open current folder in file explorer
 if [[ ! -z ${WSL_DISTRO_NAME} ]]; then
