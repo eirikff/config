@@ -7,7 +7,7 @@ if [[ $apply_all -eq "y" ]]; then
     ./git-aliases.sh
     ./git-editor.sh
     ./git-lg.sh
-    ./git-anon-email.sh
+    ./github-anon-email.sh
 fi
 
 unset apply_all
