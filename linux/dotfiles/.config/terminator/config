@@ -12,6 +12,7 @@
 [profiles]
   [[default]]
     cursor_color = "#aaaaaa"
+    scrollback_infinite = True
 [layouts]
   [[default]]
     [[[window0]]]
