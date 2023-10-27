@@ -3,7 +3,7 @@ set expandtab
 set tabstop=4 
 set shiftwidth=4 
 set autoindent
-set smartindent
+" set smartindent
 
 " Line numbers
 set nu
