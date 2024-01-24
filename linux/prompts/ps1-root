@@ -1,7 +1,0 @@
-# For a list of possible colors, run colortest-16b
-# (if not installed, run apt install colortest)
-
-# you need to wrap the colors in \[ and \] to make bash count the number of characters correctly
-tab_title="\[\e]0\];\u@\h: \W\a"
-prompt="\[\e[1;31m\]\u@\h:\[\e[1;33m\]\w\[\e[1;37m\]$\[\e[0m\]"
-export PS1="${tab_title}${prompt} "
