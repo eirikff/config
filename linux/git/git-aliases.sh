@@ -1,4 +1,4 @@
-#! /usr/bin/env bash
+#!/usr/bin/env bash
 
 # set neat aliases for common commands
 git config --global alias.st 'status'
