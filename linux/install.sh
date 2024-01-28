@@ -203,7 +203,11 @@ if ask_Yn "Install dotfiles from eirikff/config?"; then
 
 		for file in "${files_to_source[@]}"; do
 			file_path="${dotfile_base}/${file}"
-			echo "source ${file_path}" >> ${rc_path}
+
+			line="source ${file_path}"
+			if ! grep -e "${line}" "${file_path}"; then
+				echo "${line}" >> ${rc_path}
+			fi
 		done
 	done
 fi
