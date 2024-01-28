@@ -214,12 +214,12 @@ if ask_Yn "Install dotfiles from eirikff/config?"; then
 
 	if ask_Yn "Set Git config?"; then
 		git_base="${dotfile_base}/git"
-		./${git_base}/git-aliases.sh
-		./${git_base}/git-editor.sh
-		./${git_base}/git-lg.sh
+		${git_base}/git-aliases.sh
+		${git_base}/git-editor.sh
+		${git_base}/git-lg.sh
 
 		if ask_Yn "Set GitHub anonymous email?"; then
-			./${git_base}/github-anon-email.sh
+			${git_base}/github-anon-email.sh
 		fi
 	fi
 fi
