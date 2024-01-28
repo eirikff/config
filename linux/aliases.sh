@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # ls
 alias ls='ls -CF --color=auto'
 alias ll='ls -alF'
@@ -17,4 +19,7 @@ if [[ ! -z ${WSL_DISTRO_NAME} ]]; then
 else
     alias expl="xdg-open ."
 fi
+
+# old vim can still be accessed through vi
+alias vim="nvim"
 
