@@ -1,11 +1,17 @@
 #!/usr/bin/env bash
 
+function green() {
+	local string="$@"
+	echo -e "\e[32m${string}\e[0m"
+}
+
 function ask_Yn() {
 	if [ "${always_yes}" = "true" ]; then
 		return 0
 	fi 
 
-	read -p "$1 (Y/n) " resp
+	local prompt="$1 (Y/n) "
+	read -p "$(green "${prompt}")" resp
 	if [ -z "${resp}" ]; then
 		resp_lc="y"
 	else
