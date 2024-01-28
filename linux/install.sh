@@ -79,14 +79,14 @@ fi
 mkdir -p $HOME/.local/bin
 
 # Install system packages
-sudo apt update -qq
+sudo apt update 
 if ask_Yn "Upgrade available packages (recommended)?"; then
-	sudo apt upgrade -qq ${yes_flag}
+	sudo apt upgrade -y
 fi
 
 if ask_Yn "Install system packages?"; then
-	sudo apt install -qq ${yes_flag} \
-		build-essentials \
+	sudo apt install -y \
+		build-essential \
 		cmake \
 		git \
 		htop \
@@ -112,10 +112,10 @@ if ask_Yn "Install system packages?"; then
 	ln -s $(which batcat) $HOME/.local/bin/bat
 
 	if [ "${headless}" = "true" ]; then
-		sudo apt install -qq ${yes_flag} \
+		sudo apt install -y \
 			openssh-server
 	else
-		sudo apt install -qq ${yes_flag} \
+		sudo apt install -y \
 			terminator \
 			vlc \
 			wireshark \
@@ -144,7 +144,7 @@ if ask_Yn "Install docker?"; then
 	  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 	sudo apt-get update
 
-	sudo apt-get install \
+	sudo apt-get install -y \
 		docker-ce \
 		docker-ce-cli \
 		containerd.io \
