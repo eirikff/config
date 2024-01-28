@@ -171,11 +171,12 @@ if ask_Yn "Install dotfiles from eirikff/config?"; then
 	else
 		config_repo="https://github.com/eirikff/config.git"
 	fi
+	green "Using repo link: ${config_repo}"
 
 	config_target="$HOME/.config/eirikff"
 	if [ -d ${config_target} ]; then
 		pushd ${config_target} &>/dev/null
-		git pull && git checkout master
+		(git pull && git checkout master) &>/dev/null
 		popd &>/dev/null
 	else
 		git clone ${config_repo} "${config_target}"
