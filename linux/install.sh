@@ -188,7 +188,7 @@ if ask_Yn "Install dotfiles from eirikff/config?"; then
 		"path.sh"
 		"wsl.sh"
 	)
-	for rc_file in ( ".bashrc" ".zshrc" ); do
+	for rc_file in ".bashrc" ".zshrc"; do
 		rc_path="$HOME/${rc_file}"
 		if [ ! -f "${rc_path}" ]; then
 			continue
