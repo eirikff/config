@@ -206,7 +206,7 @@ if ask_Yn "Install dotfiles from eirikff/config?"; then
 			file_path="${dotfile_base}/${file}"
 
 			line="source ${file_path}"
-			if ! grep -e "${line}" "${file_path}"; then
+			if ! grep -e "${line}" "${rc_path}" &>/dev/null; then
 				echo "${line}" >> ${rc_path}
 			fi
 		done
