@@ -171,8 +171,15 @@ if ask_Yn "Install dotfiles from eirikff/config?"; then
 	else
 		config_repo="https://github.com/eirikff/config.git"
 	fi
+
 	config_target="$HOME/.config/eirikff"
-	git clone ${config_repo} "${config_target}"
+	if [ -d ${config_target} ]; then
+		pushd ${config_target} &>/dev/null
+		git pull && git checkout master
+		popd &>/dev/null
+	else
+		git clone ${config_repo} "${config_target}"
+	fi
 
 	# create symlinks for some config files
 	dotfile_base="${config_target}/linux"
