@@ -170,7 +170,7 @@ if ask_Yn "Install dotfiles from eirikff/config?"; then
 		config_repo="git@github.com:eirikff/config.git"
 	else
 		config_repo="https://github.com/eirikff/config.git"
-	if
+	fi
 	config_target="$HOME/.config/eirikff"
 	git clone ${config_repo} "${config_target}"
 
