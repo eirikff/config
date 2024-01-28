@@ -70,8 +70,6 @@ if ! ask_Yn "Continue?"; then
 	exit 0
 fi
 
-exit 0
-
 mkdir -p $HOME/.local/bin
 
 # Install system packages
