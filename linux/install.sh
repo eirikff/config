@@ -212,6 +212,19 @@ if ask_Yn "Install dotfiles from eirikff/config?"; then
 		done
 	done
 
+	# Add plugins=(...) just before source
+	zsh_plugsin=(
+		"git"
+		"zsh-syntax-highlighting"
+		"colored-man-pages"
+	)
+	plugins_array_str="plugins=("
+	for plugin in "${zsh_plugsin[@]}"; do 
+		plugins_array_str+="${plugin} "
+	done
+	plugins_array_str+=")"
+	sed -i "/^source \$ZSH\/oh-my-zsh.sh/i ${plugins_array_str}" "$HOME/.zshrc"
+
 	if ask_Yn "Set Git config?"; then
 		git_base="${dotfile_base}/git"
 		${git_base}/git-aliases.sh
