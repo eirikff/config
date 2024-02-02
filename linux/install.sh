@@ -106,7 +106,8 @@ if ask_Yn "Install system packages?"; then
 		zsh \
 		p7zip-full \
 		fdisk \
-		gdb
+		gdb \
+		jq
 
 	# necessary symlink for batcat -> bat
 	ln -s $(which batcat) $HOME/.local/bin/bat
