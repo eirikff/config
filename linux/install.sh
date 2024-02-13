@@ -220,8 +220,8 @@ if ask_Yn "Install dotfiles from eirikff/config?"; then
 	# Add plugins=(...) just before source
 	zsh_plugsin=(
 		"git"
-		"zsh-syntax-highlighting"
 		"colored-man-pages"
+		"zsh-syntax-highlighting"  # must be the last plugin sourced
 	)
 	plugins_array_str="plugins=("
 	for plugin in "${zsh_plugsin[@]}"; do 
