@@ -63,3 +63,6 @@ au BufRead,BufNewFile *.launch set filetype=xml
 
 " Remaps pressing j and k in quick succession to be the same as escape
 imap jk <ESC>
+
+" Enable mouse mode 
+set mouse=a
