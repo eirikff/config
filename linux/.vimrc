@@ -35,6 +35,7 @@ set smartcase
 " Highlight search results
 set hlsearch
 hi Search ctermfg=Black ctermbg=LightGray
+nmap <F9> :nohlsearch<CR>
 
 " Move to search results when typing search pattern
 set incsearch
