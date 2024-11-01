@@ -23,7 +23,7 @@
     "editor.bracketPairColorization.enabled": true,
     "editor.guides.bracketPairs": "active",
     "editor.formatOnSaveMode": "modificationsIfAvailable",
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.rulers": [ 80, 100 ],
     "editor.lineNumbers": "relative",
     "editor.suggestSelection": "first",
@@ -57,6 +57,7 @@
         { "before": [ "<leader>", "s", "w" ], "commands": [ "workbench.action.showAllSymbols" ] },
         // Similar to telescope find references
         { "before": [ "g", "r" ], "commands": [ "editor.action.goToReferences" ] },
+        { "before": [ "<leader>", "s", "r" ], "commands": [ "references-view.findReferences" ] },
         // Rename symbol under cursor
         { "before": [ "<leader>", "r", "n" ], "commands": [ "editor.action.rename" ] },
         { "before": [ "<leader>", "t", "s" ], "commands": [ "workbench.action.toggleSidebarVisibility" ] },
@@ -75,6 +76,7 @@
         // Keep yanked text when deleting/changing, works with (i)nside 
         { "before": [ "<leader>", "d" ], "after": [ "\"", "_", "d" ] },
         { "before": [ "<leader>", "c" ], "after": [ "\"", "_", "c" ] },
+        { "before": [ "<leader>", "f", "f" ], "commands": [ "editor.action.formatDocument" ] },
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         { "before": [ "<leader>", "y" ], "commands": [ "editor.action.clipboardCopyAction" ] },
