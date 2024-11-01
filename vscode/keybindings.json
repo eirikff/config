@@ -1,0 +1,8 @@
+[
+    // Move focus back to editor when escape is pressed (e.g. from sidebar or terminal)
+    {
+        "key": "escape",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "!editorFocus"
+    }
+]
