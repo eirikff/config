@@ -8,7 +8,11 @@
     }, 
     "[markdown]": {
         "editor.wordWrap": "on",
-        "editor.quickSuggestions": false
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "off"
+        }
     }, 
     "python.formatting.provider": "autopep8",
     "python.formatting.autopep8Args": [
@@ -20,33 +24,73 @@
     "editor.guides.bracketPairs": "active",
     "editor.formatOnSaveMode": "modificationsIfAvailable",
     "editor.formatOnSave": true,
-    "editor.rulers": [
-        80,
-        100
-    ],
+    "editor.rulers": [ 80, 100 ],
+    "editor.lineNumbers": "relative",
+    "editor.suggestSelection": "first",
     "debug.toolBarLocation": "docked",
     "git.ignoreMissingGitWarning": true,
     /// Plugins
     "cmake.configureOnOpen": false, 
     "gitlens.hovers.currentLine.over": "line",
+    // Vim
+    "vim.leader": " ",
+    "vim.insertModeKeyBindingsNonRecursive": [
+        { "before": [ "j", "k" ], "after": [ "<esc>" ] },
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // Keep cursor in the middle of the screen when half page jumping
+        { "before": [ "<C-d>" ], "after": [ "<C-d>", "z", "z", ] },
+        { "before": [ "<C-u>" ], "after": [ "<C-u>", "z", "z", ] },
+        // Keep search terms in the middle of the screen when jumping
+        { "before": [ "n" ], "after": [ "n", "z", "z", "z", "v" ] },
+        { "before": [ "N" ], "after": [ "N", "z", "z", "z", "v" ] },
+        // Keep cursor in place when using J
+        { "before": [ "J" ], "after": [ "m", "z", "J", "`", "z" ] },
+        // Open file explorer
+        { "before": [ "<leader>", "p", "v" ], "commands": [ "workbench.view.explorer" ] },
+        // Similar to telescope find files
+        { "before": [ "<leader>", "s", "f" ], "commands": [ "workbench.action.quickOpen" ] },
+        // Similar to telescope search in files using ripgrep
+        { "before": [ "<leader>", "s", "g" ], "commands": [ "workbench.action.findInFiles" ] },
+        // Search for symbols in current file
+        { "before": [ "<leader>", "s", "d" ], "commands": [ "workbench.action.gotoSymbol" ] },
+        { "before": [ "<leader>", "s", "w" ], "commands": [ "workbench.action.showAllSymbols" ] },
+        // Similar to telescope find references
+        { "before": [ "g", "r" ], "commands": [ "editor.action.goToReferences" ] },
+        // Rename symbol under cursor
+        { "before": [ "<leader>", "r", "n" ], "commands": [ "editor.action.rename" ] },
+        { "before": [ "<leader>", "t", "s" ], "commands": [ "workbench.action.toggleSidebarVisibility" ] },
+        // Toggle visibility of terminal/output panel, but keep focus in editor
+        { "before": [ "<leader>", "t", "t" ], "commands": [ "workbench.action.togglePanel", "workbench.action.focusActiveEditorGroup" ] },
+        // Show command palette
+        { "before": [ "<leader>", "<C-p>" ], "commands": [ "workbench.action.showCommands" ] },
+        // Navigate to previous/next diagnostic
+        { "before": [ "[", "d" ], "commands": [ "editor.action.marker.prev" ] },
+        { "before": [ "]", "d" ], "commands": [ "editor.action.marker.next" ] },
+        // Go to parent context/fold
+        { "before": [ "[", "c" ], "commands": [ "editor.gotoParentFold" ] },
+        // Show symbol information 
+        { "before": [ "K" ], "commands": [ "editor.action.showHover" ]  },
+        { "before": [ "<C-k>" ], "commands": [ "editor.action.triggerParameterHints" ]  },
+        // Keep yanked text when deleting/changing, works with (i)nside 
+        { "before": [ "<leader>", "d" ], "after": [ "\"", "_", "d" ] },
+        { "before": [ "<leader>", "c" ], "after": [ "\"", "_", "c" ] },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        { "before": [ "<leader>", "y" ], "commands": [ "editor.action.clipboardCopyAction" ] },
+        // Keep yanked text when pasting/deleting/changing over highlighted text
+        { "before": [ "<leader>", "p" ], "after": [ "\"", "_", "d", "P" ] },
+        { "before": [ "<leader>", "d" ], "after": [ "\"", "_", "d" ] },
+        { "before": [ "<leader>", "c" ], "after": [ "\"", "_", "c" ] },
+    ],
     "vim.insertModeKeyBindings": [
-        {
-            "before": [
-                "j",
-                "k"
-            ],
-            "after": [
-                "<esc>"
-            ]
-        }
+        // Open function signature hover 
+        { "before": [ "<C-k>" ], "commands": [ "editor.action.triggerParameterHints" ]  },
     ],
     // disable some keys being handled by vim and be handled by vscode directly instead
     "vim.handleKeys": {
-        "<C-t>": false,
-        "<C-w>": false,
-        "<C-n>": false
     },
     // to be able to move past code folds using j/k without the fold opening
-    "vim.foldfix": true
+    "vim.foldfix": true,
+    "vim.incsearch": true,
 }
-
