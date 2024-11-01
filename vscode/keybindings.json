@@ -4,5 +4,32 @@
         "key": "escape",
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "!editorFocus"
+    },
+    // Navigate up/down with ctrl+p/n in command palette
+    {
+        "key": "ctrl+n",
+        "command": "quickInput.next",
+        "when": "inCommandsPicker || whichkeyVisible"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "quickInput.previous",
+        "when": "inCommandsPicker || whichkeyVisible"
+    },
+    // Navigate up/down with ctrl+p/n in explorer sidebar
+    {
+        "key": "ctrl+n",
+        "command": "list.focusDown",
+        "when": "explorerViewletFocus"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "list.focusUp",
+        "when": "explorerViewletFocus"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "workbench.action.problems.focus",
+        "when": ""
     }
 ]

@@ -4,7 +4,7 @@
         "editor.defaultFormatter": "ms-vscode.cpptools"
     },
     "[jsonc]": {
-        "editor.wordWrap": "on"
+        "editor.wordWrap": "off"
     }, 
     "[markdown]": {
         "editor.wordWrap": "on",
@@ -27,6 +27,7 @@
     "editor.rulers": [ 80, 100 ],
     "editor.lineNumbers": "relative",
     "editor.suggestSelection": "first",
+    "editor.minimap.enabled": false,
     "debug.toolBarLocation": "docked",
     "git.ignoreMissingGitWarning": true,
     /// Plugins
@@ -63,8 +64,6 @@
         { "before": [ "<leader>", "t", "s" ], "commands": [ "workbench.action.toggleSidebarVisibility" ] },
         // Toggle visibility of terminal/output panel, but keep focus in editor
         { "before": [ "<leader>", "t", "t" ], "commands": [ "workbench.action.togglePanel", "workbench.action.focusActiveEditorGroup" ] },
-        // Show command palette
-        { "before": [ "<leader>", "<C-p>" ], "commands": [ "workbench.action.showCommands" ] },
         // Navigate to previous/next diagnostic
         { "before": [ "[", "d" ], "commands": [ "editor.action.marker.prev" ] },
         { "before": [ "]", "d" ], "commands": [ "editor.action.marker.next" ] },
@@ -95,4 +94,5 @@
     // to be able to move past code folds using j/k without the fold opening
     "vim.foldfix": true,
     "vim.incsearch": true,
+    "vim.highlightedyank.enable": true,
 }
