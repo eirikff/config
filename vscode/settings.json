@@ -68,14 +68,19 @@
         { "before": [ "[", "d" ], "commands": [ "editor.action.marker.prev" ] },
         { "before": [ "]", "d" ], "commands": [ "editor.action.marker.next" ] },
         // Go to parent context/fold
-        { "before": [ "[", "c" ], "commands": [ "editor.gotoParentFold" ] },
+        { "before": [ "[", "c" ], "after": [ "m", "'" ], "commands": [ "editor.gotoParentFold" ] },
         // Show symbol information 
         { "before": [ "K" ], "commands": [ "editor.action.showHover" ]  },
         { "before": [ "<C-k>" ], "commands": [ "editor.action.triggerParameterHints" ]  },
         // Keep yanked text when deleting/changing, works with (i)nside 
         { "before": [ "<leader>", "d" ], "after": [ "\"", "_", "d" ] },
         { "before": [ "<leader>", "c" ], "after": [ "\"", "_", "c" ] },
+        // Formats the entire document
         { "before": [ "<leader>", "f", "f" ], "commands": [ "editor.action.formatDocument" ] },
+        // Sets mark before going to definition
+        { "before": [ "g", "d" ], "after": [ "m", "'", "g", "d" ] },
+        // Formats the current line
+        { "before": [ "<leader>", "f", "s" ], "commands": [ "editor.action.formatSelection" ] },
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         { "before": [ "<leader>", "y" ], "commands": [ "editor.action.clipboardCopyAction" ] },
@@ -83,6 +88,11 @@
         { "before": [ "<leader>", "p" ], "after": [ "\"", "_", "d", "P" ] },
         { "before": [ "<leader>", "d" ], "after": [ "\"", "_", "d" ] },
         { "before": [ "<leader>", "c" ], "after": [ "\"", "_", "c" ] },
+        // Formats the visual selection
+        { "before": [ "<leader>", "f", "s" ], "commands": [ "editor.action.formatSelection", "extension.vim_escape" ] },
+        { "before": [ "<leader>", "t", "s" ], "commands": [ "workbench.action.toggleSidebarVisibility" ] },
+        // Toggle visibility of terminal/output panel, but keep focus in editor
+        { "before": [ "<leader>", "t", "t" ], "commands": [ "workbench.action.togglePanel", "workbench.action.focusActiveEditorGroup" ] },
     ],
     "vim.insertModeKeyBindings": [
         // Open function signature hover 
@@ -95,4 +105,5 @@
     "vim.foldfix": true,
     "vim.incsearch": true,
     "vim.highlightedyank.enable": true,
+    "editor.wordWrap": "off",
 }
